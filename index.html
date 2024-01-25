@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electron App</title>
+</head>
+<body>
+
+  <!-- Portfolio Section -->
+  <div id="portfolio-container"></div>
+
+  <h2>Add Investment to Portfolio</h2>
+  <label for="investmentTitle">Title:</label>
+  <input type="text" id="investmentTitle" placeholder="Enter title">
+
+  <label for="investmentAmount">Amount:</label>
+  <input type="text" id="investmentAmount" placeholder="Enter amount">
+
+  <button onclick="addInvestmentToPortfolio()">Add to Portfolio</button>
+
+  <!-- Investment Insights Section -->
+  <h2>Investment Insights</h2>
+  <button onclick="fetchAndDisplayInsights()">Fetch Insights</button>
+  <div id="insights-container"></div>
+
+  <!-- Chart Section -->
+  <canvas id="investment-chart"></canvas>
+
+  <!-- Settings Button -->
+  <button onclick="openSettingsPanel()">Open Settings</button>
+
+  <!-- File Dialog Button -->
+  <button onclick="openFileDialog()">Open File Dialog</button>
+
+  <!-- Contact Form -->
+  <h2>Contact Form</h2>
+  <form onsubmit="event.preventDefault(); submitForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Open Renderer.js -->
+  <button onclick="logEvent('User Action', { action: 'Clicked Button' })">Log User Action</button>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
